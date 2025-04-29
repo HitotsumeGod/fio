@@ -1,7 +1,11 @@
 CC=gcc
 
 all: mem z
-mem: Mem.c
-	$(CC) -o $@ $^ 
+mem: mem.c
+	$(CC) -o $@ $^ -g
 z: Zeroes.c
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ -g
+clean:
+	rm -f mem
+	rm -f z
+	rm -f vgcore.*
