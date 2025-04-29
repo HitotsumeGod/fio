@@ -1,11 +1,9 @@
 CC=gcc
+SRC=src/main
+DEPS=src/headers
 
-all: mem z
-mem: mem.c
-	$(CC) -o $@ $^ -g
-z: Zeroes.c
-	$(CC) -o $@ $^ -g
+proc: $(SRC)/Processor.c $(SRC)/mem.c
+	$(CC) -o $@ $^ -I $(DEPS)
 clean:
-	rm -f mem
-	rm -f z
+	rm -f proc
 	rm -f vgcore.*
